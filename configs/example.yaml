@@ -1,0 +1,39 @@
+dataset:
+  name: example
+  input: ../input.csv
+  encoding: utf-8
+  id_column: id
+  text_columns: text
+  metadata_columns: []
+  output_dir: ../outputs
+
+preprocessing:
+  language: zh
+  chinese_tokenization: true
+  custom_dictionary: null
+  stopwords: null
+
+model:
+  embedding_model: paraphrase-multilingual-MiniLM-L12-v2
+  umap:
+    n_neighbors: 15
+    n_components: 5
+    min_dist: 0.0
+    metric: cosine
+    random_state: 42
+  hdbscan:
+    min_cluster_size: 10
+    min_samples: 5
+    metric: euclidean
+    cluster_selection_method: eom
+    prediction_data: true
+  top_n_words: 10
+  representation:
+    method: ctfidf
+  calculate_probabilities: false
+  nr_topics: null
+
+vectorizer:
+  ngram_range: [1, 2]
+  min_df: 2
+  max_df: 0.95

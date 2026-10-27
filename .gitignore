@@ -1,6 +1,10 @@
 finaldata/
 outputs/
+output/
+**/.numba_cache/
 __pycache__/
 *.pyc
 .venv/
+.deps/
 .env
+.env.*
